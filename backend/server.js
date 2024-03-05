@@ -2,6 +2,9 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT || 3000;
 
+//used midleware ro call html and js from from build.
+app.use(express.static('dist'))
+
 app.get('/', (req, res) => {
     res.send('i am here');
 })
